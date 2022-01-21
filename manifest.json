@@ -2,17 +2,26 @@
   "name": "Clear Statement to CSV",
   "description": "Extensão para extrair o extrato da Clear para um arquivo CSV.",
   "version": "1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "permissions": ["activeTab", "scripting"],
-  "background": {
-    "persistent": false,
-    "scripts": ["background.js"]
+  "action": {
+    "default_title": "Export Clear Statement to CSV",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/icon16.png",
+      "48": "/images/icon48.png",
+      "128": "/images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icon16.png",
+    "48": "/images/icon48.png",
+    "128": "/images/icon128.png"
   },
   "content_scripts": [
     {
-      "matches": ["https://pro.clear.com.br/#minha-conta/extrato"],
-      "js": ["content.js"]
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
     }
-  ],
-  "action": {}
-}
+  ]
+} 
