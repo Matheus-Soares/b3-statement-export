@@ -3,7 +3,6 @@
   "description": "Extensão para extrair o extrato da Clear para um arquivo CSV.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["activeTab", "scripting"],
   "action": {
     "default_title": "Export Clear Statement to CSV",
     "default_popup": "popup.html",
@@ -20,8 +19,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content-script.js"]
+      "matches": ["*://pro.clear.com.br/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
     }
   ]
 } 
