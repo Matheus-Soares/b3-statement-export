@@ -2,16 +2,26 @@
 $(function () {
 
     function convertTableToCSV(tableContent) {
-        var operations = $("<div></div>").html(tableContent.content).find("div.table-content__item.pointer")
+        var operations = $("<div></div>")
+            .html(tableContent.content)
+            .find("div.table-content__item.pointer")
         var result = "Data;Papel;Qtde;Valor;Tipo\n"
         var skippedOperations = 0
 
         for (let op of operations) {
             // Check if the value is positive
             if ($(op).find("div.value.positive.icon-positive").length > 0) {
-                var settlement = $(op).find("div.settlement > soma-caption.date.soma-caption.hydrated").text()
-                var value = $(op).find("div.value.positive.icon-positive > soma-caption.value.soma-caption.hydrated").text().replace("R$ ", "")
-                var description = $(op).find("div.description > soma-caption.description.soma-caption.hydrated").text().replace(/\s+/g, "").trim()
+                var settlement = $(op)
+                    .find("div.settlement > soma-caption.date.soma-caption.hydrated")
+                    .text()
+                var value = $(op)
+                    .find("div.value.positive.icon-positive > soma-caption.value.soma-caption.hydrated")
+                    .text()
+                    .replace("R$ ", "")
+                var description = $(op).find("div.description > soma-caption.description.soma-caption.hydrated")
+                    .text()
+                    .replace(/\s+/g, "")
+                    .trim()
 
                 if (description.includes("RENDIMENTO")) {
                     const regexRendimentos = new RegExp("RENDIMENTO(.+)PAPEL(.+)", "g")
@@ -28,23 +38,42 @@ $(function () {
                 } else skippedOperations++
             }
         }
+
         result += "\n\nSkipped Operations = " + skippedOperations
 
-        $("#resultText").val(result)
+        $("#resultText").val(result).change()
     }
 
+    $("#resultText").change(function () {
+        if ($(this).val().trim())
+        $("#save").removeAttr("disabled")
+        else $("#save").prop("disabled")
+    })
 
     $("#convert").click(function () {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            var currTabId = tabs[0].id
-
             chrome.tabs.sendMessage(tabs[0].id, { method: "getExchangeStatement" }, convertTableToCSV);
         });
     })
 
     $("#copyToClipboard").click(function () {
-        const text = $("#resultText").val();
-        navigator.clipboard.writeText(text)
+        const result = $("#resultText").val()
+        navigator.clipboard.writeText(result)
+    })
+
+    $("#save").click(function () {
+        var result = $("#resultText").val()
+        if (!result) {
+            alert("You need to convert the statement first! :D")
+            return
+        }
+
+        $('<a></a>')
+            .attr('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent($("#resultText").val()))
+            .attr('download', 'statement.csv')
+            .appendTo('body')
+            .get(0)
+            .click();
     })
 
 });
