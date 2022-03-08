@@ -33,6 +33,7 @@ Na nova aba, primeiramente clique no botão Convert para converter as informaç�
 ## Observações
 O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre Capital informados na corretora Clear. Assim sendo, os informes que não correspondem a nenhum dos tipos anteriores, serão ignorados. 
 
+</br>
 
 <div align="center">
     Essa extensão está em constante evolução e em busca de melhorias, caso tenha alguma ideia de algo que possa ser ajustado, envie um email para <a href="mailto:matheus.asoares2@gmail.com" target="_blank">matheus.asoares2@gmail.com</a> ou contribua para o projeto &#128151
@@ -74,6 +75,8 @@ In the new tab, first click on the Convert button to convert the page informatio
 
 ## Comments
 The purpose of this extension is to export the capital gains reported on the Clear page. Therefore, some of the information that is not of interest but is shown on the page will be ignored.
+
+</br>
 
 <div align="center">
     This extension is constantly evolving and looking for improvements, if you have any ideas for something that can be adjusted, please send an email to <a href="mailto:matheus.asoares2@gmail.com" target="_blank">matheus.asoares2@gmail.com</a> or contribute to the project &#128151
