@@ -37,6 +37,3 @@ O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre 
 <div align="center">
     Essa extensão está em constante evolução e em busca de melhorias, caso tenha alguma ideia de algo que possa ser ajustado, envie um email para <a href="mailto:matheus.asoares2@gmail.com" target="_blank">matheus.asoares2@gmail.com</a> ou contribua para o projeto &#128151
 </div>
-
-
----
