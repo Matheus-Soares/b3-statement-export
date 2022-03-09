@@ -1,8 +1,9 @@
 {
-  "name": "Clear Statement to CSV",
-  "description": "Extensão para extrair o extrato da Clear para um arquivo CSV.",
-  "version": "1.1",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "version": "1.2",
   "manifest_version": 3,
+  "default_locale": "en",
   "action": {
     "default_title": "Export Clear Statement to CSV",
     "default_popup": "popup.html",

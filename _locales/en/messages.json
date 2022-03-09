@@ -1,0 +1,20 @@
+{
+    "appName": {
+        "message": "Clear Statement to CSV"
+    },
+    "appDesc": {
+        "message": "Extension to convert the Clear statement to a CSV file."
+    },
+    "tabTitle": {
+        "message": "Convert Clear Statement to CSV"
+    },
+    "convert": {
+        "message": "Convert"
+    },
+    "copyToClipboard": {
+        "message": "Copy to Clipboard"
+    },
+    "save": {
+        "message": "Save"
+    }
+}

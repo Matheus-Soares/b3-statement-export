@@ -1,0 +1,20 @@
+{
+    "appName": {
+        "message": "Extrato da Clear em CSV"
+    },
+    "appDesc": {
+        "message": "Extensão para extrair o extrato da Clear para um arquivo CSV."
+    },
+    "tabTitle": {
+        "message": "Converter Extrato da Clear para CSV"
+    },
+    "convert": {
+        "message": "Converter"
+    },
+    "copyToClipboard": {
+        "message": "Copiar"
+    },
+    "save": {
+        "message": "Salvar"
+    }
+}
