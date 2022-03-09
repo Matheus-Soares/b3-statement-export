@@ -1,6 +1,23 @@
 // Prevent any jQuery code from running before the document is finished loading.
 $(function () {
 
+    function popupI18n() {
+        var objects = document.getElementsByTagName('html');
+        for (let obj of objects) {
+            var tag = obj.innerHTML.toString();
+            var newValue = tag.replace(/__MSG_(\w+)__/g, function (match, v1) {
+                return v1 ? chrome.i18n.getMessage(v1) : "";
+            });
+
+            if (newValue != tag) {
+                obj.innerHTML = newValue;
+            }
+        }
+    }
+
+    popupI18n();
+
+
     function convertTableToCSV(tableContent) {
         var operations = $("<div></div>")
             .html(tableContent.content)
@@ -46,7 +63,7 @@ $(function () {
 
     $("#resultText").change(function () {
         if ($(this).val().trim())
-        $("#save").removeAttr("disabled")
+            $("#save").removeAttr("disabled")
         else $("#save").prop("disabled")
     })
 

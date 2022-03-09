@@ -6,7 +6,7 @@
 ---
 
 <div align="center">
-    <img src="/images/example.png"/>
+    <img src="/images/example_pt.png"/>
 </div>
 
 ## Features
@@ -49,7 +49,7 @@ O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre 
 ---
 
 <div align="center">
-    <img src="/images/example.png"/>
+    <img src="/images/example_en.png"/>
 </div>
 
 ## Features
