@@ -18,8 +18,8 @@
 ## Como instalar
 1. Baixe a última release [aqui](https://github.com/Matheus-Soares/clear-statement-export/releases) e descompacte o arquivo baixado.
 2. No navegador Google Chrome, abra a página ```chrome://extensions/```
-3. Habilite o Modo do Desenvolvedor, no canto superior direito
-4. Clique em Carregar sem compactação
+3. Habilite o ```Modo do Desenvolvedor```, no canto superior direito
+4. Clique em ```Carregar sem compactação```
 5. Selecione a pasta descompactada
 6. Aproveite!
 
