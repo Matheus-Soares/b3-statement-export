@@ -35,7 +35,7 @@ $(function () {
                     .find("div.value.positive.icon-positive > soma-caption.value.soma-caption.hydrated")
                     .text()
                     .replace("R$ ", "")
-                var description = $(op).find("div.description > soma-caption.description.soma-caption.hydrated")
+                var description = $(op).find("div > soma-caption.description.soma-caption.hydrated")
                     .text()
                     .replace(/\s+/g, "")
                     .trim()
