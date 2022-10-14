@@ -67,9 +67,19 @@ $(function () {
         else $("#save").prop("disabled")
     })
 
+    function readNoteAndConvert(noteFile) {
+        $("#resultText").val(noteFile.content).change()
+    }
+
     $("#convert").click(function () {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             chrome.tabs.sendMessage(tabs[0].id, { method: "getExchangeStatement" }, convertTableToCSV);
+        });
+    })
+
+    $("#readNote").click(function () {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, { method: "getNoteFile" }, readNoteAndConvert);
         });
     })
 

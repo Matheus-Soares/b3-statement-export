@@ -6,5 +6,11 @@ chrome.runtime.onMessage.addListener(
   
             sendResponse({ content: statement });
         }
+
+        if (request.method === "getNoteFile") {
+            
+            var a = sender
+            sendResponse({ content:  request.method });
+        }
     }
 );

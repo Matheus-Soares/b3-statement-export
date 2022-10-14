@@ -21,7 +21,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://pro.clear.com.br/*"
+        "*://pro.clear.com.br/*",
+        "file://*/*.pdf"
       ],
       "js": [
         "thirdParty/jquery-3.6.0.min.js",

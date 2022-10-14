@@ -11,6 +11,9 @@
     "convert": {
         "message": "Convert"
     },
+    "readNote": {
+        "message": "Read Note"
+    },
     "copyToClipboard": {
         "message": "Copy to Clipboard"
     },

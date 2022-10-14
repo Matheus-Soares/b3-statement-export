@@ -11,6 +11,9 @@
     "convert": {
         "message": "Converter"
     },
+    "readNote": {
+        "message": "Ler Nota"
+    },
     "copyToClipboard": {
         "message": "Copiar"
     },
