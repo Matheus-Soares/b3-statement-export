@@ -7,19 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>__MSG_tabTitle__</title>
     <link rel="stylesheet" href="popup.css">
-    <script src="thirdParty/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="thirdParty/datatables.min.css"/>
+
+    <script type="text/javascript" src="thirdParty/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="thirdParty/datatables.min.js"></script>
+    <script type="text/javascript" src="thirdParty/moment.min.js"></script>
+
 </head>
 
 <body>
     <h1 class="title">__MSG_tabTitle__</h1>
     <div>
-        <textarea name="resultText" id="resultText" cols="30" rows="10"></textarea>
-        <button id="convert" class="button-4">__MSG_convert__</button>
-        <button id="copyToClipboard" class="button-4">__MSG_copyToClipboard__</button>
-        <button id="save" class="button-4" disabled>__MSG_save__</button>
-
-        <script src="popup.js"></script>
+         <table id="resultTable" class="display">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Ticker</th>
+                    <th>Qtde</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+        </table>
     </div>
+    <div style="text-align: center">
+        <button id="convert" class="button-4">__MSG_convert__</button>
+    </div>
+    <script src="popup.js"></script>
 </body>
 
 </html>

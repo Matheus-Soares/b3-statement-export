@@ -25,6 +25,8 @@
       ],
       "js": [
         "thirdParty/jquery-3.6.0.min.js",
+        "thirdParty/datatables.min.js",
+        "thirdParty/moment.min.js",
         "content-script.js"
       ],
       "run_at": "document_start"
