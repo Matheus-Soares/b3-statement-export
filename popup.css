@@ -1,25 +1,18 @@
 body {
-  width: 350px;
-  height: 480px;
+  width: 500px;
+  height: 550px;
 }
 
 .title {
-  margin: 20px;
+  margin: 40px;
   text-align: center;
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   color: #37474f;
 }
 
-#resultText {
-  height: 320px;
-  width: 340px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .button-4 {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   appearance: none;
   background-color: #FAFBFC;
   border: 1px solid rgba(27, 31, 35, 0.15);
