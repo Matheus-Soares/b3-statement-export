@@ -1,12 +1,12 @@
 {
     "appName": {
-        "message": "Extrato da Clear em CSV"
+        "message": "Leitor do extrato da NuInvest"
     },
     "appDesc": {
-        "message": "Extensão para extrair o extrato da Clear para um arquivo CSV."
+        "message": "Extensão para extrair o extrato da NuInvest para um arquivo CSV."
     },
     "tabTitle": {
-        "message": "Converter Extrato da Clear para CSV"
+        "message": "Converter Extrato da NuInvest para CSV"
     },
     "convert": {
         "message": "Converter"

@@ -52,51 +52,47 @@ $(function () {
 
     initTable();
 
-    function readStatements(tableContent) {
-        var operations = $("<div></div>")
-            .html(tableContent.content)
-            .find("div.table-content__item.pointer")
+    function readStatement(tableContent) {
 
         var table = $("#resultTable").DataTable()
         table.clear().draw()
-        for (let op of operations) {
-            // Check if the value is positive
-            if ($(op).find("div.value.positive.icon-positive").length > 0) {
-                var settlement = $(op)
-                    .find("div.settlement > soma-caption.date.soma-caption.hydrated")
-                    .text()
-                var value = $(op)
-                    .find("div.value.positive.icon-positive > soma-caption.value.soma-caption.hydrated")
-                    .text()
-                    .replace("R$ ", "")
-                var description = $(op).find("div > soma-caption.description.soma-caption.hydrated")
-                    .text()
-                    .replace(/\s+/g, "")
-                    .trim()
 
-                if (description.includes("RENDIMENTO")) {
-                    const regexRendimentos = new RegExp("RENDIMENTO(.+)PAPEL(.+)", "g")
-                    const [_, quantity, ticker] = regexRendimentos.exec(description)
+        var operations = $('<div></div>').html(tableContent).find('tbody tr')
 
-                    table.row.add([settlement, ticker, quantity, value, "Rendimento"]).draw()
-                } else if (description.includes("JUROSS/CAPITAL")) {
-                    const regexJuros = new RegExp("JUROSS\/CAPITAL([0-9]+)([A-Z0-9]+)", "g")
-                    const [_, quantity, ticker] = regexJuros.exec(description)
+        operations.each(function (index, row) {
+            var date = $(row).find('td:nth-child(1)').text()
+            var description = $(row).find('td:nth-child(3)')
+                .text()
+                .replace(/\s+/g, "")
+                .trim()
+            var value = $(row).find('td:nth-child(4)')
+                .text()
+                .replace("R$ ", "")
 
-                    table.row.add([settlement, ticker, quantity, value, "Juros s/ Capital"]).draw()
-                } else if (description.includes("DIVIDENDOS")) {
-                    const regexDividendos = new RegExp("DIVIDENDOS([0-9]+)([A-Z0-9]+)")
-                    const [_, quantity, ticker] = regexDividendos.exec(description)
+            if (description.includes("Rendimento")) {
+                const regexRendimentos = new RegExp("Rendimentos/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+).*", "g")
+                const [_, quantity, ticker] = regexRendimentos.exec(description)
 
-                    table.row.add([settlement, ticker, quantity, value, "Dividendos"]).draw()
-                }
+                table.row.add([date, ticker, quantity, value, "Rendimento"]).draw()
+            } else if (description.includes("Juros")) {
+                const regexJuros = new RegExp("Jurosdecapitalproprios/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+)", "g")
+                const [_, quantity, ticker] = regexJuros.exec(description)
+
+                table.row.add([date, ticker, quantity, value, "Juros s/ Capital"]).draw()
+            } else if (description.includes("Dividendos")) {
+                const regexDividendos = new RegExp("Dividendoss/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+)")
+                const [_, quantity, ticker] = regexDividendos.exec(description)
+
+                table.row.add([date, ticker, quantity, value, "Dividendos"]).draw()
             }
-        }
+        });
     }
 
     $("#convert").click(function () {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, { method: "getExchangeStatement" }, readStatements);
+            chrome.tabs.sendMessage(tabs[0].id, { method: "getStatement" }, function (response) {
+                readStatement(response.content);
+            });
         });
-    })
+    });
 });
