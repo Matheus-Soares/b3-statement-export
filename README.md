@@ -1,6 +1,6 @@
 <div align="center">
-    <h1 align="center">[PT] Exportação do Extrato da Clear</h1>
-    Uma simples extensão do Chrome para salvar o extrato da Clear em um arquivo CSV.
+    <h1 align="center">[PT] Exportação do Extrato da NuInvest</h1>
+    Uma simples extensão do Chrome para salvar o extrato da NuInvest em um arquivo CSV.
 </div>
 
 ---
@@ -10,7 +10,7 @@
 </div>
 
 ## Features
-- Converter o extrato da corretora Clear em um texto em CSV
+- Converter o extrato da corretora NuInvest em um texto em CSV
 - Edição do resultado gerado
 - Copiar o resultado para a área de transferência
 - Exportar o resultado para um arquivo
@@ -24,14 +24,14 @@
 6. Aproveite!
 
 ## Como usar 
-Entre na sua conta da corretora Clear normalmente e, na aba Gestão Operacional do Menu, acesse Extrato e Notas.
+Entre na sua conta da corretora NuInvest normalmente e, na aba Mais, acesse Extrato.
 
 Após carregar a tela, selecione o período que deseja converter e clique no ícone da extensão.
 
 Na nova aba, primeiramente clique no botão Convert para converter as informações da tela. Após, faça as edições e modificações necessárias e copie para a área de transferência ou salve o resultado em um arquivo.
 
 ## Observações
-O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre Capital informados na corretora Clear. Assim sendo, os informes que não correspondem a nenhum dos tipos anteriores, serão ignorados. 
+O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre Capital informados na corretora NuInvest. Assim sendo, os informes que não correspondem a nenhum dos tipos anteriores, serão ignorados. 
 
 </br>
 
@@ -42,8 +42,8 @@ O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre 
 ---
 
 <div align="center">
-    <h1 align="center">[EN] Clear Statement Export</h1>
-    A simple Chrome extension to convert to CSV the statement of Clear, a brazilian stockbroker.
+    <h1 align="center">[EN] NuInvest Statement Export</h1>
+    A simple Chrome extension to convert to CSV the statement of NuInvest, a brazilian stockbroker.
 </div>
 
 ---
@@ -53,7 +53,7 @@ O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre 
 </div>
 
 ## Features
-- Convert Clear statement to a CSV text
+- Convert NuInvest statement to a CSV text
 - Edit the generated result
 - Copy the result to clipboard
 - Export the result to a file
@@ -67,14 +67,14 @@ O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre 
 6. Enjoy it!
 
 ## How to use 
-Log into your Clear account normally and, on the Gestão Operacional tab of the Menu, click on Extrato e Notas.
+Log into your NuInvest account normally and, on the Mais tab of the menu, click on Extrato.
 
 After loading the page, select the period that you want to convert and click on the extension icon.
 
 In the new tab, first click on the Convert button to convert the page informations. Then, make the necessary edits and modifications and copy it to the clipboard or save the result to a file.
 
 ## Comments
-The purpose of this extension is to export the capital gains reported on the Clear page. Therefore, some of the information that is not of interest but is shown on the page will be ignored.
+The purpose of this extension is to export the capital gains reported on the NuInvest page. Therefore, some of the information that is not of interest but is shown on the page will be ignored.
 
 </br>
 
