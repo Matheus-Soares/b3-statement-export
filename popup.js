@@ -70,17 +70,17 @@ $(function () {
                 .replace("R$ ", "")
 
             if (description.includes("Rendimento")) {
-                const regexRendimentos = new RegExp("Rendimentos/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+).*", "g")
+                const regexRendimentos = new RegExp("Rendimentos/([0-9.]+)([A-Z]{4}[0-9]{1,2}B?).*", "g")
                 const [_, quantity, ticker] = regexRendimentos.exec(description)
 
                 table.row.add([date, ticker, quantity, value, "Rendimento"]).draw()
             } else if (description.includes("Juros")) {
-                const regexJuros = new RegExp("Jurosdecapitalproprios/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+)", "g")
+                const regexJuros = new RegExp("Jurosdecapitalproprios/([0-9.]+)([A-Z]{4}[0-9]{1,2}B?)", "g")
                 const [_, quantity, ticker] = regexJuros.exec(description)
 
                 table.row.add([date, ticker, quantity, value, "Juros s/ Capital"]).draw()
             } else if (description.includes("Dividendos")) {
-                const regexDividendos = new RegExp("Dividendoss/([0-9]+)([A-Z][A-Z][A-Z][A-Z][0-9]+)")
+                const regexDividendos = new RegExp("Dividendoss/([0-9.]+)([A-Z]{4}[0-9]{1,2}B?)")
                 const [_, quantity, ticker] = regexDividendos.exec(description)
 
                 table.row.add([date, ticker, quantity, value, "Dividendos"]).draw()
