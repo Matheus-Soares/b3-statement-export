@@ -5,7 +5,7 @@
   "manifest_version": 3,
   "default_locale": "en",
   "action": {
-    "default_title": "Export NuInvest Statement to CSV",
+    "default_title": "Exportar Dividendos da B3",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "/images/icon16.png",
@@ -21,8 +21,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://pro.clear.com.br/*",
-        "https://www.nuinvest.com.br/*"
+        "https://www.investidor.b3.com.br/*"
       ],
       "js": [
         "thirdParty/jquery-3.6.0.min.js",

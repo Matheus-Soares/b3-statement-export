@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chrome.runtime.onMessage.addListener(
         function (request, sender, sendResponse) {
             if (request.method === "getStatement") {
-                var table = $('#account-statement > div > div:nth-child(2) > div > table').html()
+                let table = $('.b3i-extrato-conteudo__tabela.fundo-extrato').html();
                 sendResponse({ content: table });
             }
         }
