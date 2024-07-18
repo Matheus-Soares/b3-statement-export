@@ -128,7 +128,7 @@ $(function () {
                 let brokerDescription = $(row).find('.cdk-cell.cdk-column-instituicao.ng-star-inserted > span')
                     .text()
 
-                let broker = ""
+                let broker
                 switch (brokerDescription) {
                     case " XP INVESTIMENTOS CCTVM S/A ":
                         broker = "Rico";
