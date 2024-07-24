@@ -47,15 +47,22 @@ $(function () {
                 dom: "Bfrtip",
                 buttons: [
                     {
-                        extend: "copyHtml5",
-                        fieldBoundary: "",
-                        fieldSeparator: ";"
+                        text: 'Copiar coluna Data',
+                        action: function (e, dt, node, config) {
+                            copySelectedColumns([0]);
+                        }
                     },
                     {
-                        extend: "csvHtml5",
-                        fieldBoundary: "",
-                        fieldSeparator: ";",
-                        filename: "b3Statement.csv"
+                        text: 'Copiar Dividendos',
+                        action: function (e, dt, node, config) {
+                            copySelectedColumns([1, 2, 3, 4]);
+                        }
+                    },
+                    {
+                        text: 'Copiar coluna Corretora',
+                        action: function (e, dt, node, config) {
+                            copySelectedColumns([5]);
+                        }
                     }
                 ],
                 paging: false,
@@ -76,6 +83,23 @@ $(function () {
         table.clear().draw();
     }
 
+    function copySelectedColumns(columnIndices) {
+        let table = $("#resultTable").DataTable();
+        let data = table.rows().data().toArray();
+
+        let selectedData = data.map(row =>
+            columnIndices.map(index => row[index]).join('\t')
+        ).join('\n');
+
+        navigator.clipboard.writeText(selectedData)
+            .then(() => {
+                alert('Colunas copiadas com sucesso!');
+            })
+            .catch(err => {
+                console.error('Erro ao copiar as colunas: ', err);
+            });
+    }
+
     initTable();
 
     function readStatement(tableContent) {
@@ -90,13 +114,13 @@ $(function () {
 
             let rows = $(day).find(".cdk-row.ng-star-inserted");
 
-            const allowedMovements ={
+            const allowedMovements = {
                 "dividendo": "Dividendos",
                 "jurossobrecapitalpróprio": "Juros s/ Capital",
                 "rendimento": "Rendimento"
             }
 
-            rows.each(function (index, row){
+            rows.each(function (index, row) {
                 let operationType = $(row).find('.cdk-cell.cdk-column-tipoOperacao.ng-star-inserted > span')
                     .text()
                     .replace(/\s+/g, "")
@@ -120,7 +144,10 @@ $(function () {
 
                 let value = $(row).find('.cdk-cell.cdk-column-valorOperacao.ng-star-inserted > span')
                     .text()
-                    .replace("R$ ", "")
+                    .replace(/\s+/g, "")
+                    .replace(/^\D+/, '')
+
+                console.log(value)
 
                 let description = $(row).find('.cdk-cell.cdk-column-nomeProduto.ng-star-inserted > span')
                     .text()
@@ -140,7 +167,7 @@ $(function () {
                         broker = brokerDescription;
                 }
 
-                const regexTicker = new RegExp( "([A-Z]{4}[0-9]{1,2}).*", "g")
+                const regexTicker = new RegExp("([A-Z]{4}[0-9]{1,2}).*", "g")
                 const [_, ticker] = regexTicker.exec(description)
 
                 table.row.add([formattedDate, ticker, quantity, value, allowedMovements[movementType], broker]).draw()

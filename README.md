@@ -1,6 +1,6 @@
 <div align="center">
-    <h1 align="center">[PT] Exportação do Extrato da NuInvest</h1>
-    Uma simples extensão do Chrome para salvar o extrato da NuInvest em um arquivo CSV.
+    <h1 align="center">[PT] Exportação de dividendos da B3</h1>
+    Uma simples extensão do Chrome para extrair os dividendos da Área do Investidos da B3 para um arquivo CSV.
 </div>
 
 ---
@@ -10,7 +10,7 @@
 </div>
 
 ## Features
-- Converter o extrato da corretora NuInvest em um texto em CSV
+- Leitor dos dividendos, rendimentos e JCP para uma tabela
 - Edição do resultado gerado
 - Copiar o resultado para a área de transferência
 - Exportar o resultado para um arquivo
@@ -24,60 +24,17 @@
 6. Aproveite!
 
 ## Como usar 
-Entre na sua conta da corretora NuInvest normalmente e, na aba Mais, acesse Extrato.
+Acesse a [Área do Investidor da B3](https://www.investidor.b3.com.br/login), clique na aba Extrato.
 
 Após carregar a tela, selecione o período que deseja converter e clique no ícone da extensão.
 
 Na nova aba, primeiramente clique no botão Convert para converter as informações da tela. Após, faça as edições e modificações necessárias e copie para a área de transferência ou salve o resultado em um arquivo.
 
 ## Observações
-O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre Capital informados na corretora NuInvest. Assim sendo, os informes que não correspondem a nenhum dos tipos anteriores, serão ignorados. 
+O objetivo dessa extensão é exportar os Rendimentos, Dividendos e Juros Sobre Capital informados na Área do Investidor da B3. Assim sendo, os informes que não correspondem a nenhum dos tipos anteriores, serão ignorados. 
 
 </br>
 
 <div align="center">
     Essa extensão está em constante evolução e em busca de melhorias, caso tenha alguma ideia de algo que possa ser ajustado, envie um email para <a href="mailto:matheus.asoares2@gmail.com" target="_blank">matheus.asoares2@gmail.com</a> ou contribua para o projeto &#128151
-</div>
-
----
-
-<div align="center">
-    <h1 align="center">[EN] NuInvest Statement Export</h1>
-    A simple Chrome extension to convert to CSV the statement of NuInvest, a brazilian stockbroker.
-</div>
-
----
-
-<div align="center">
-    <img src="/images/example_en.png"/>
-</div>
-
-## Features
-- Convert NuInvest statement to a CSV text
-- Edit the generated result
-- Copy the result to clipboard
-- Export the result to a file
-
-## How to Install
-1. Download the latest release [here](https://github.com/Matheus-Soares/clear-statement-export/releases) and extract the downloaded file
-2. In the Google Chrome Browser, open the page ```chrome://extensions/```
-3. Enable the ```Developer Mode```, in the top right corner
-4. Click on ```Load unpacked```
-5. Select the unpacked folder
-6. Enjoy it!
-
-## How to use 
-Log into your NuInvest account normally and, on the Mais tab of the menu, click on Extrato.
-
-After loading the page, select the period that you want to convert and click on the extension icon.
-
-In the new tab, first click on the Convert button to convert the page informations. Then, make the necessary edits and modifications and copy it to the clipboard or save the result to a file.
-
-## Comments
-The purpose of this extension is to export the capital gains reported on the NuInvest page. Therefore, some of the information that is not of interest but is shown on the page will be ignored.
-
-</br>
-
-<div align="center">
-    This extension is constantly evolving and looking for improvements, if you have any ideas for something that can be adjusted, please send an email to <a href="mailto:matheus.asoares2@gmail.com" target="_blank">matheus.asoares2@gmail.com</a> or contribute to the project &#128151
 </div>

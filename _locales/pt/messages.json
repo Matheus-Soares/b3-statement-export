@@ -1,15 +1,15 @@
 {
     "appName": {
-        "message": "Leitor do extrato da NuInvest"
+        "message": "Leitor de dividendos da B3"
     },
     "appDesc": {
-        "message": "Extensão para extrair o extrato da NuInvest para um arquivo CSV."
+        "message": "Extensão para extrair os dividendos da B3 para um arquivo CSV."
     },
     "tabTitle": {
-        "message": "Converter Extrato da NuInvest para CSV"
+        "message": "Dividendos da B3"
     },
     "convert": {
-        "message": "Converter"
+        "message": "Ler dividendos"
     },
     "copyToClipboard": {
         "message": "Copiar"
